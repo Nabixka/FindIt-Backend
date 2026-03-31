@@ -31,7 +31,7 @@ exports.sendOtpCode = async (req, res) => {
             UPDATE users SET otp_code = $1, otp_expired = $2 WHERE email = $3`,
         [otp, expired, email])
 
-        await sendOTP(email, otp)
+        sendOTP(email, otp)
 
         res.json({
             message: "Kode OTP Berhasil dikirim"
@@ -169,7 +169,7 @@ exports.loginUser = async (req, res) => {
             UPDATE users SET otp_code = $1, otp_expired = $2 WHERE email = $3`,
         [otp, expired, email])
         
-        await sendOTP(email, otp)
+        sendOTP(email, otp)
 
         const result = await user.getUserById(exist.id)
         res.status(200).json({
