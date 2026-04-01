@@ -27,7 +27,7 @@ async function itemSeeder() {
             {
                 user_id: 1,
                 item_id: 1,
-                proof: "/uploads/report/dompet.png",
+                proof: "/uploads/report/dompet.jpg",
                 reason: "Baldjadkjakjdakjdjakdjkdl"
             }
         ]

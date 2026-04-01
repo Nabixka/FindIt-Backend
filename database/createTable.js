@@ -1,4 +1,10 @@
-const pool = require("./db")
+let pool
+
+if(process.env.MODE == "dev"){
+    pool = require("./db")
+}else{
+    pool = require("./postgres")
+}
 
 async function createTable(){
     try{
