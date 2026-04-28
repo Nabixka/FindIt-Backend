@@ -25,6 +25,7 @@ async function itemSeeder() {
 
         const reports = [
             {
+                report_user_id: 1,
                 user_id: 1,
                 item_id: 1,
                 proof: "/uploads/report/dompet.jpg",
@@ -40,8 +41,8 @@ async function itemSeeder() {
 
         for (let report of reports) {
             await pool.query(`
-                        INSERT INTO report (user_id, item_id, proof, reason) VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING`,
-                [report.user_id, report.item_id, report.proof, report.reason])
+                        INSERT INTO report (report_user_id, user_id, item_id, proof, reason) VALUES ($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING`,
+                [report.report_user_id, report.user_id, report.item_id, report.proof, report.reason])
         }
 
         console.log("Berhasil Membuat Item")

@@ -176,6 +176,35 @@ exports.createReport = async (req, res) => {
     }
 }
 
+// Get Report User
+exports.getReportByUser = async (req, res) => {
+    try{
+        const { id } = req.params
+        
+        const exist = await user.getUserById(id)
+        if(!exist){
+            return res.status(404).json({
+                status: 404,
+                message: "User Not Found"
+            })
+        }
+
+        const result = await user.getReportByUser(id)
+        res.status(200).json({
+            status: 200,
+            message: "success",
+            data: result
+        })
+    }
+    catch(err){
+        res.status(500).json({
+            status: 500,
+            message: err.message,
+            stack: err.stack
+        })
+    }
+}
+
 exports.updateStatusUser = async (req, res) => {
     try{
         const { id } = req.params

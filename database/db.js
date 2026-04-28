@@ -6,7 +6,7 @@ const pool = new Pool({
     port: process.env.DB_PORT,
     password: process.env.DB_PASSWORD,
     user: process.env.DB_USER, 
-    database: "postgres"
+    database: "findit"
 })
 
 module.exports = pool

@@ -51,11 +51,13 @@ async function createTable(){
         await pool.query(`
             CREATE TABLE IF NOT EXISTS report(
             id SERIAL PRImARY KEY,
+            report_user_id INT,
             user_id INT,
             item_id INT,
             proof TEXT,
             reason TEXT,
 
+            FOREIGN KEY (report_user_id) REFERENCES users(id) ON DELETE CASCADE,
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
             FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE CASCADE
             )`)

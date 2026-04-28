@@ -14,6 +14,7 @@ router.get("/", userController.getUser)
 // Laporan Pengguna Usil
 router.get("/report", userController.getReport)
 router.get("/report/:id", userController.getReportById)
+router.get("/report/user/:id", userController.getReportByUser)
 router.post("/report", uploadReport.single("proof"), userController.createReport)
 
 // Update Status User 

@@ -16,7 +16,6 @@ app.use("/user", userRouter)
 app.use("/item", itemRouter)
 app.use("/auth", authRouter)
 
- 
 app.listen(port, () => {
     console.log(`SERVER BERJALAN di http://localhost:${port}`)
 })
