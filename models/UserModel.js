@@ -50,7 +50,7 @@ const getReport = async () => {
         r.id,
 
         json_build_object(
-        'id', u.id,
+        'id', ru.id,
         'username', ru.username,
         'email', ru.email
         ) AS user_report,
@@ -86,7 +86,7 @@ const getReportById = async (id) => {
         r.id,
 
         json_build_object(
-        'id', u.id,
+        'id', ru.id,
         'username', ru.username,
         'email', ru.email
         ) AS user_report,
@@ -129,7 +129,7 @@ const createReport = async (data) => {
         r.id,
 
         json_build_object(
-        'id', u.id,
+        'id', ru.id,
         'username', ru.username,
         'email', ru.email
         ) AS user_report,
@@ -165,7 +165,7 @@ const getReportByUser = async (id) => {
         r.id,
 
         json_build_object(
-        'id', u.id,
+        'id', ru.id,
         'username', ru.username,
         'email', ru.email
         ) AS user_report,
